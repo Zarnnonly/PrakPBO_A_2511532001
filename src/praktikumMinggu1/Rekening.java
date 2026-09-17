@@ -1,20 +1,35 @@
 package praktikumMinggu1;
 
+import java.util.ArrayList;
+
 public class Rekening {
     String nomorRekening;
     String namaPemilik;
     double saldo;
+    
+    // Implementasi asosiasi
+    ArrayList<Transaksi> riwayatTransaksi;
+    
 
     public Rekening(String nomor, String nama, double saldoAwal) {
-        nomorRekening = nomor;
-        namaPemilik = nama;
-        saldo = saldoAwal;
+        this.nomorRekening = nomor;
+        this.namaPemilik = nama;
+        this.saldo = saldoAwal;
+        
+        //inisialisasi arraylist didalam constructor
+        this.riwayatTransaksi = new ArrayList<>();
+        
         System.out.println("Rekening atas nama " + namaPemilik + " berhasil dibuat dengan saldo Rp" + saldo);
     }
 
     public void setorTunai(double nominal) {
-        if (nominal > 0) {
+        if (nominal > 10000) {
             saldo += nominal;
+            // merekam riwayat
+            String idTrx = "TRX-S-" + System.currentTimeMillis();
+            Transaksi trxBaru = new Transaksi(idTrx, "Kredit", nominal);
+            riwayatTransaksi.add(trxBaru);
+            
             System.out.println("Setor tunai Rp" + nominal + " berhasil. Saldo saat ini: Rp" + saldo);
         } else if (nominal < 10000) {
             System.out.println("Gagal: Nominal setor harus lebih dari Rp. 10.000!");
