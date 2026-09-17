@@ -54,7 +54,42 @@ public class Rekening {
     		System.out.println("Penarikan gagal! Saldo anda tidak mencukupi, saldo anda saat ini adalah Rp:" + saldo);
     	} else {
     		saldo = saldo - nominal;
+    		
+            // Tugas 1
+            String idTrx = "TRX-T-" + System.currentTimeMillis();
+            Transaksi trxBaru = new Transaksi(idTrx, "Debit", nominal);
+            riwayatTransaksi.add(trxBaru);
+            
     		System.out.println("Tarik tunai Rp" + nominal + " berhasil. Saldo saat ini: Rp" + saldo);
+    	}
+    }
+    // Tugas 2
+    public void cetakMutasi() {
+        System.out.println("--- MUTASI REKENING ---");
+        if (riwayatTransaksi.isEmpty()) {
+            System.out.println("Belum ada transaksi pada rekening ini");
+        } else {
+            for (Transaksi trx : riwayatTransaksi) {
+                trx.cetakDetail();
+            }
+        }
+        System.out.println("-----------------------");
+    }
+    // challenge 3
+    public void cetakTigaTerbaru() {
+    	int ukuran = riwayatTransaksi.size();
+    	
+    	if (ukuran == 0) {
+    		System.out.println("Belum ada transaksi pada rekening ini");
+    	} else {
+    		int start = 0;
+    				
+    		if (ukuran > 3) {
+    			start = ukuran - 3;
+    		}
+    		for (int i = ukuran - 1; i >= start; i-- ) {
+    			riwayatTransaksi.get(i).cetakDetail();
+    		}
     	}
     }
 }
