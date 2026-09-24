@@ -3,23 +3,43 @@ package praktikumMinggu1;
 import java.util.ArrayList;
 
 public class Rekening {
-    String nomorRekening;
-    String namaPemilik;
-    double saldo;
+    private String nomorRekening;
+    private String namaPemilik;
+    private double saldo;
+    private String pin;
     
     // Implementasi asosiasi
     ArrayList<Transaksi> riwayatTransaksi;
     
 
-    public Rekening(String nomor, String nama, double saldoAwal) {
+    public Rekening(String nomor, String nama, double saldoAwal, String pinAwal) {
         this.nomorRekening = nomor;
         this.namaPemilik = nama;
         this.saldo = saldoAwal;
         
+        // validasi pin
+        while (true) {
+        if (pinAwal.matches("\\d{6}")) {
+        	this.pin = pinAwal;
+        	break;
+        } else {
+            System.out.println("Peringatan: PIN harus 6 digit dan harus angka!");
+            }
+        
+        }
+        
         //inisialisasi arraylist didalam constructor
         this.riwayatTransaksi = new ArrayList<>();
-        
         System.out.println("Rekening atas nama " + namaPemilik + " berhasil dibuat dengan saldo Rp" + saldo);
+    }
+    
+    // getter untuk atribut yang diizinkan dibaca publik
+    public String getNomorRekening() { return nomorRekening; }
+    public String getNamaPemilik() { return namaPemilik; }
+
+    // method otentikasi internal (validasi enkapsulasi)
+    public boolean otentikasi(String inputPin) {
+    	return this.pin.equals(inputPin);
     }
 
     public void setorTunai(double nominal) {

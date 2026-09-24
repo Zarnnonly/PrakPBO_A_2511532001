@@ -35,8 +35,12 @@ public class Main {
                     String nama = input.nextLine();
                     System.out.print("Masukkan Saldo Awal: ");
                     double saldo = input.nextDouble();
+                    input.nextLine();
+                    System.out.print("Masukkan PIN Awal: ");
+                    String pin = input.nextLine();
                     
-                    Rekening akunBaru = new Rekening(no, nama, saldo);
+                    
+                    Rekening akunBaru = new Rekening(no, nama, saldo, pin);
                     daftarRekening.add(akunBaru);
                     akunAktif = akunBaru;
                     break;
@@ -53,9 +57,16 @@ public class Main {
                     if (akunAktif == null) {
                         System.out.println("Error: Mohon maaf, Anda belum memiliki nomor rekening aktif!");
                     } else {
-                        System.out.print("Masukkan nominal tarik tunai: ");
-                        double tarik = input.nextDouble();
-                        akunAktif.tarikTunai(tarik);
+                    	System.out.print("Masukkan PIN Anda: ");
+                    	pin = input.nextLine();
+
+                    	if (akunAktif.otentikasi(pin)) {
+                    	    System.out.print("Masukkan nominal tarik tunai: ");
+                    	    double tarik = input.nextDouble();
+                    	    akunAktif.tarikTunai(tarik);
+                    	} else {
+                    	    System.out.println("Akses Ditolak: PIN yang Anda masukkan salah!");
+                    	}
                     }
                     break;
                 case 4:
@@ -74,10 +85,10 @@ public class Main {
                         boolean ditemukan = false;
                         
                         for (Rekening rek : daftarRekening) {
-                            if (rek.nomorRekening.equals(noCari)) {
+                            if (rek.getNomorRekening().equals(noCari)) {
                                 akunAktif = rek;
                                 ditemukan = true;
-                                System.out.println("Berhasil ganti akun ke: " + akunAktif.namaPemilik);
+                                System.out.println("Berhasil ganti akun ke: " + akunAktif.getNamaPemilik());
                                 break;
                             }
                         }
@@ -92,7 +103,14 @@ public class Main {
                     if (akunAktif == null) {
                         System.out.println("Error: Anda belum membuka rekening!");
                     } else {
-                        akunAktif.cetakMutasi(); // memanggil fungsi dari class Rekening
+                    	System.out.print("Masukkan PIN Anda: ");
+                    	pin = input.nextLine();
+
+                    	if (akunAktif.otentikasi(pin)) {
+                    	    akunAktif.cetakMutasi();
+                    	} else {
+                    	    System.out.println("Akses Ditolak: PIN yang Anda masukkan salah!");
+                    	}
                     }
                     break;
                 case 7:
