@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class Rekening {
     private String nomorRekening;
     private String namaPemilik;
-    private double saldo;
     private String pin;
     
-    // Implementasi asosiasi
-    ArrayList<Transaksi> riwayatTransaksi;
+    // protected agar subclass bisa langsung
+    protected double saldo;
+    protected ArrayList<Transaksi> riwayatTransaksi;
     
 
     public Rekening(String nomor, String nama, double saldoAwal, String pinAwal) {
@@ -24,6 +24,7 @@ public class Rekening {
         	break;
         } else {
             System.out.println("Peringatan: PIN harus 6 digit dan harus angka!");
+            return;
             }
         
         }

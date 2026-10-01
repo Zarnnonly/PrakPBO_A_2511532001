@@ -22,6 +22,7 @@ public class Main {
             System.out.println("5. Ganti Akun"); 
             System.out.println("6. Cetak Mutasi"); // Tambahan menu Tugas 2
             System.out.println("7. Cetak 3 Terbaru");
+            System.out.println("8. Simulasi Akhir Bulan (Khusus Tabungan)");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
             int pilihan = input.nextInt();
@@ -38,9 +39,24 @@ public class Main {
                     input.nextLine();
                     System.out.print("Masukkan PIN Awal: ");
                     String pin = input.nextLine();
+                    System.out.print("Pilih Produk: 1. Tabungan Umum | 2. Giro Bisnis");
+                    int jenisProduk = input.nextInt();
+                    input.nextLine();
                     
+                    Rekening akunBaru = null;
                     
-                    Rekening akunBaru = new Rekening(no, nama, saldo, pin);
+                    if (jenisProduk == 1) {
+                    System.out.print("Masukkan persentase bunga");
+                    double sukuBunga = input.nextDouble();
+                    akunBaru = new RekeningTabungan(no, nama, saldo, pin, sukuBunga);
+                    } else if (jenisProduk == 2) {
+                    	System.out.print("Masukkan limit pinjaman");
+                        double limitPinjaman = input.nextDouble();
+                        akunBaru = new RekeningGiro(no, nama, saldo, pin, limitPinjaman);
+                    } else {
+                    	System.out.println("Pilihan produk tidak valid!");
+                    }
+                    
                     daftarRekening.add(akunBaru);
                     akunAktif = akunBaru;
                     break;
@@ -121,13 +137,23 @@ public class Main {
                         akunAktif.cetakTigaTerbaru(); 
                     }
                     break;
+                case 8:
+                	if (akunAktif == null) {
+                        System.out.println("Error: Anda belum membuka rekening!");
+                	} else if (akunAktif instanceof RekeningTabungan) {
+                		RekeningTabungan tabunganaktif = (RekeningTabungan) akunAktif;
+                		tabunganaktif.tambahBungaAkhirBulan();
+                	} else {
+                		System.out.print("Rekening anda tidak berjenis tabungan!");
+                	}
+                	break;
                 case 0:
                     isRunning = false;
                     System.out.println("Sistem ditutup. Terima kasih!");
                     break;
                 default:
                     System.out.println("Pilihan tidak valid!");
-            }
+            		}
         }
         input.close();
     }
