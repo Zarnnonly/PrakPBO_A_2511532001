@@ -20,9 +20,10 @@ public class Main {
             System.out.println("3. Tarik Tunai");
             System.out.println("4. Cek Informasi Rekening");
             System.out.println("5. Ganti Akun"); 
-            System.out.println("6. Cetak Mutasi"); // Tambahan menu Tugas 2
+            System.out.println("6. Cetak Mutasi"); 
             System.out.println("7. Cetak 3 Terbaru");
             System.out.println("8. Simulasi Akhir Bulan (Khusus Tabungan)");
+            System.out.println("9. Transfer ke Rekening Lain"); // Tambahan menu transfer
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
             int pilihan = input.nextInt();
@@ -39,22 +40,23 @@ public class Main {
                     input.nextLine();
                     System.out.print("Masukkan PIN Awal: ");
                     String pin = input.nextLine();
-                    System.out.print("Pilih Produk: 1. Tabungan Umum | 2. Giro Bisnis");
+                    System.out.print("Pilih Produk: 1. Tabungan Umum | 2. Giro Bisnis: ");
                     int jenisProduk = input.nextInt();
                     input.nextLine();
                     
                     Rekening akunBaru = null;
                     
                     if (jenisProduk == 1) {
-                    System.out.print("Masukkan persentase bunga");
-                    double sukuBunga = input.nextDouble();
-                    akunBaru = new RekeningTabungan(no, nama, saldo, pin, sukuBunga);
+                        System.out.print("Masukkan persentase bunga: ");
+                        double sukuBunga = input.nextDouble();
+                        akunBaru = new RekeningTabungan(no, nama, saldo, pin, sukuBunga);
                     } else if (jenisProduk == 2) {
-                    	System.out.print("Masukkan limit pinjaman");
+                    	System.out.print("Masukkan limit pinjaman: ");
                         double limitPinjaman = input.nextDouble();
                         akunBaru = new RekeningGiro(no, nama, saldo, pin, limitPinjaman);
                     } else {
                     	System.out.println("Pilihan produk tidak valid!");
+                        break; // Cegah error null pointer kalau milihnya salah
                     }
                     
                     daftarRekening.add(akunBaru);
@@ -115,7 +117,6 @@ public class Main {
                     }
                     break;
                 case 6:
-                    // Tugas 2, Pemanggilan method cetakMutasi()
                     if (akunAktif == null) {
                         System.out.println("Error: Anda belum membuka rekening!");
                     } else {
@@ -130,7 +131,6 @@ public class Main {
                     }
                     break;
                 case 7:
-                    // Challenge 3
                     if (akunAktif == null) {
                         System.out.println("Error: Anda belum membuka rekening!");
                     } else {
@@ -144,16 +144,46 @@ public class Main {
                 		RekeningTabungan tabunganaktif = (RekeningTabungan) akunAktif;
                 		tabunganaktif.tambahBungaAkhirBulan();
                 	} else {
-                		System.out.print("Rekening anda tidak berjenis tabungan!");
+                		System.out.print("Rekening anda tidak berjenis tabungan!\n");
                 	}
                 	break;
+                case 9:
+                    if (akunAktif == null) {
+                        System.out.println("Error: Anda belum membuka rekening!");
+                    } else {
+                        System.out.print("Masukkan Nomor Rekening Tujuan: ");
+                        String rekTujuan = input.nextLine();
+                        
+                        Rekening akunTujuan = null;
+                        
+                        for (Rekening rek : daftarRekening) {
+                            if (rek.getNomorRekening().equals(rekTujuan)) {
+                                akunTujuan = rek;
+                                break;
+                            }
+                        }
+                        
+                        if (akunTujuan == null) {
+                            System.out.println("Transfer Gagal: Rekening tujuan tidak ditemukan!");
+                        } else {
+                            System.out.print("Masukkan nominal transfer: Rp");
+                            double nominalTf = input.nextDouble();
+                            input.nextLine();
+                            
+                            System.out.print("Masukkan PIN Anda untuk konfirmasi: ");
+                            String pinTf = input.nextLine();
+                            
+                            akunAktif.transfer(akunTujuan, nominalTf, pinTf);
+                        }
+                    }
+                    break;
                 case 0:
                     isRunning = false;
                     System.out.println("Sistem ditutup. Terima kasih!");
                     break;
                 default:
                     System.out.println("Pilihan tidak valid!");
-            		}
+            }
         }
         input.close();
     }

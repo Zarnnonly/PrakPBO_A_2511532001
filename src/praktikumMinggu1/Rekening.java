@@ -68,21 +68,22 @@ public class Rekening {
         System.out.println("--------------------");
     }
     
-    public void tarikTunai(double nominal) {
-    	if (nominal < 10000) {
-    		System.out.println("Penarikan gagal! Minimal penarikan saldo adalah Rp10.000!");
-    	} else if (saldo < nominal) {
-    		System.out.println("Penarikan gagal! Saldo anda tidak mencukupi, saldo anda saat ini adalah Rp:" + saldo);
-    	} else {
-    		saldo = saldo - nominal;
-    		
-            // Tugas 1
-            String idTrx = "TRX-T-" + System.currentTimeMillis();
-            Transaksi trxBaru = new Transaksi(idTrx, "Debit", nominal);
-            riwayatTransaksi.add(trxBaru);
+    public boolean tarikTunai(double nominal) {
+        if (nominal <= 0) {
+            System.out.println("Gagal: Nominal tarik harus lebih dari 0!");
+            return false;
+        } else if (nominal > saldo) {
+            System.out.println("Transaksi Gagal: Saldo tidak mencukupi. Saldo Anda: Rp" + saldo);
+            return false;
+        } else {
+            saldo -= nominal;
             
-    		System.out.println("Tarik tunai Rp" + nominal + " berhasil. Saldo saat ini: Rp" + saldo);
-    	}
+            String idTrx = "TRX-T-" + System.currentTimeMillis();
+            riwayatTransaksi.add(new Transaksi(idTrx, "Debit", nominal));
+            
+            System.out.println("Tarik tunai Rp" + nominal + " berhasil. Sisa saldo: Rp" + saldo);
+            return true;
+        }
     }
     // Tugas 2
     public void cetakMutasi() {
@@ -112,5 +113,19 @@ public class Rekening {
     			riwayatTransaksi.get(i).cetakDetail();
     		}
     	}
+    }
+
+    public void transfer(Rekening tujuan, double nominal, String pinInput) {
+        if (this.otentikasi(pinInput) == false) {
+            System.out.println("Transfer Gagal: PIN yang Anda masukkan salah!");
+            return;
+        }
+        
+        boolean suksesTarik = this.tarikTunai(nominal);
+        
+        if (suksesTarik == true) {
+            tujuan.setorTunai(nominal);
+            System.out.println("Transfer sebesar Rp" + nominal + " ke " + tujuan.getNamaPemilik() + " berhasil diproses.");
+        }
     }
 }
