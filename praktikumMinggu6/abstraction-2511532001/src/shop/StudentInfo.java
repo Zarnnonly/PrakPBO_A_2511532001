@@ -7,12 +7,12 @@ package shop;
  * 3. Copy the three printed values below.
  */
 public final class StudentInfo {
-    public static final String NIM = "";   // TODO: e.g. "2401010057"
-    public static final String NAME = "";  // TODO: your full name
+    public static final String NIM = "2511532001";
+    public static final String NAME = "Az Zahrand Solichul Tajussalathin";
 
-    public static final int CARD_ADMIN_PERCENT = 0;   // TODO: from tools.NimParams
-    public static final long TRANSFER_ADMIN_FEE = 0;  // TODO: from tools.NimParams
-    public static final int SMS_MAX_LENGTH = 0;       // TODO: from tools.NimParams
+    public static final int CARD_ADMIN_PERCENT = 2;
+    public static final long TRANSFER_ADMIN_FEE = 3_000;
+    public static final int SMS_MAX_LENGTH = 101;
 
     private StudentInfo() {
         // constants only; no objects

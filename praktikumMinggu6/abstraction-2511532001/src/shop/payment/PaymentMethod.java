@@ -6,4 +6,8 @@ public interface PaymentMethod {
 
     /** @return true if the payment succeeds */
     boolean pay(long amount);
+
+    default long adminFee(long amount) {
+        return 0;
+    }
 }
