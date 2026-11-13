@@ -1,0 +1,4 @@
+Parameter tugas untuk NIM 2511532001
+  CARD_ADMIN_PERCENT  = 2
+  TRANSFER_ADMIN_FEE  = 3000
+  SMS_MAX_LENGTH      = 101

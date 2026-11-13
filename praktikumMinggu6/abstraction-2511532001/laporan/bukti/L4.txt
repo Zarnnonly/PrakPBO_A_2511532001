@@ -1,0 +1,5 @@
+C:\Users\lenovo\AppData\Local\Temp\abstraction-evidence-65ffat6n\Probe.java:1: error: calculateCost(int) in Probe cannot override calculateCost(int) in ShippingService
+class Probe extends shop.shipping.ShippingService { Probe() { super("Gratis"); } protected long ratePerKg() { return 0; } public long calculateCost(int grams) { return 0; } }
+                                                                                                                                      ^
+  overridden method is final
+1 error

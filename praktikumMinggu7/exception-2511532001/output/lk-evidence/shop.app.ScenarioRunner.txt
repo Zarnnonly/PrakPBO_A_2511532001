@@ -1,0 +1,19 @@
+NIM 2511532001 | saldo awal Rp200000 | stok awal KOPI=3 RDG=1 TEH=5
+S1 Kopi + Rendang | Reguler | e-wallet
+   [SALDO] Saldo tidak cukup: perlu Rp215000, tersedia Rp200000 (kurang Rp15000)
+   -> stok KOPI=3 RDG=1 TEH=5 | saldo Rp200000
+S2 Kopi x3 | Reguler | transfer bank
+   [BAYAR] Bank Nagari sedang gangguan, coba lagi nanti
+   -> stok KOPI=3 RDG=1 TEH=5 | saldo Rp200000
+S3 Rendang x2 | Reguler | e-wallet
+   [STOK] Stok RDG-002 tidak cukup: diminta 1, tersedia 0
+   -> stok KOPI=3 RDG=1 TEH=5 | saldo Rp200000
+S4 Kopi | Ekspres | kartu kredit (limit Rp100000)
+   [SALDO] Saldo tidak cukup: perlu Rp103000, tersedia Rp100000 (kurang Rp3000)
+   -> stok KOPI=3 RDG=1 TEH=5 | saldo Rp200000
+S5 Keranjang kosong | Reguler | e-wallet
+   [INVALID] IllegalStateException: Cart is empty
+   -> stok KOPI=3 RDG=1 TEH=5 | saldo Rp200000
+S6 Teh x2 | Reguler | e-wallet
+   [OK] E-Wallet DompetKu membayar Rp80000
+   -> stok KOPI=3 RDG=1 TEH=3 | saldo Rp120000

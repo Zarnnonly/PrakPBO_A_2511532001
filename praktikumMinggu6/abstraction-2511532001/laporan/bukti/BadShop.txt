@@ -1,0 +1,9 @@
+Total cart: 170000
+Ongkir EXPRES 2 kg: 0
+ORD-1 -> Jl. Sudirman 10, Bukittinggi
+ORD-2 -> Jl. Sudirman 10, Bukittinggi
+Harga flash sale: 70000
+true | Voucher, remaining balance 70000.0
+Exception in thread "main" java.lang.UnsupportedOperationException: Voucher is not shipped
+	at review.GiftVoucher.ship(BadShop.java:41)
+	at review.BadShop.main(BadShop.java:184)

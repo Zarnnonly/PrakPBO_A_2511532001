@@ -1,0 +1,4 @@
+C:\Users\lenovo\AppData\Local\Temp\abstraction-evidence-65ffat6n\Probe.java:1: error: Product is abstract; cannot be instantiated
+class Probe { Object p = new shop.model.Product("X", "Uji", 1000); }
+                         ^
+1 error

@@ -1,0 +1,47 @@
+@startuml
+package shop.notification {
+interface NotificationChannel {
+  +channelName(): String
+  +send(contact: CustomerContact, message: String): boolean
+}
+abstract class AbstractChannel {
+  -sentCount: int
+  -lastDelivered: String
+  +send(contact: CustomerContact, message: String): boolean {leaf}
+  #resolveRecipient(contact: CustomerContact): String {abstract}
+  #deliver(recipient: String, message: String): boolean {abstract}
+  #prepare(message: String): String
+  +getSentCount(): int
+  +getLastDelivered(): String
+}
+class CustomerContact <<final>> {
+  -name: String {readOnly}
+  -email: String {readOnly}
+  -phone: String {readOnly}
+  +getName(): String
+  +getEmail(): String
+  +getPhone(): String
+}
+class EmailChannel
+class SmsChannel {
+  -maxLength: int {readOnly}
+  +SmsChannel(maxLength: int)
+  #prepare(message: String): String
+}
+class WhatsAppChannel {
+  #prepare(message: String): String
+}
+class NotificationService {
+  -channels: List<NotificationChannel>
+  +register(channel: NotificationChannel): void
+  +broadcast(contact: CustomerContact, message: String): int
+}
+NotificationChannel <|.. AbstractChannel
+AbstractChannel <|-- EmailChannel
+AbstractChannel <|-- SmsChannel
+AbstractChannel <|-- WhatsAppChannel
+NotificationService o-- "0..*" NotificationChannel
+NotificationChannel ..> CustomerContact
+NotificationService ..> CustomerContact
+}
+@enduml

@@ -1,0 +1,5 @@
+C:\Users\lenovo\AppData\Local\Temp\abstraction-evidence-65ffat6n\T1e\shop\payment\CreditCardPayment.java:5: error: types RefundablePayment and InstallmentPayment are incompatible;
+public class CreditCardPayment implements RefundablePayment, InstallmentPayment {
+       ^
+  class CreditCardPayment inherits unrelated defaults for policy() from types RefundablePayment and InstallmentPayment
+1 error

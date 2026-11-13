@@ -1,0 +1,13 @@
+C:\Users\lenovo\AppData\Local\Temp\abstraction-evidence-65ffat6n\T1a\shop\app\ShopApp.java:65: error: <anonymous shop.app.ShopApp$1> is not abstract and does not override abstract method adminFee(long) in PaymentMethod
+        PaymentMethod voucher = new PaymentMethod() { // anonymous class
+                                                    ^
+C:\Users\lenovo\AppData\Local\Temp\abstraction-evidence-65ffat6n\T1a\shop\payment\BankTransferPayment.java:5: error: BankTransferPayment is not abstract and does not override abstract method adminFee(long) in PaymentMethod
+public class BankTransferPayment implements PaymentMethod {
+       ^
+C:\Users\lenovo\AppData\Local\Temp\abstraction-evidence-65ffat6n\T1a\shop\payment\CreditCardPayment.java:5: error: CreditCardPayment is not abstract and does not override abstract method adminFee(long) in PaymentMethod
+public class CreditCardPayment implements RefundablePayment, InstallmentPayment {
+       ^
+C:\Users\lenovo\AppData\Local\Temp\abstraction-evidence-65ffat6n\T1a\shop\payment\EWalletPayment.java:3: error: EWalletPayment is not abstract and does not override abstract method adminFee(long) in PaymentMethod
+public class EWalletPayment implements RefundablePayment {
+       ^
+4 errors

@@ -1,0 +1,39 @@
+=== SELF CHECK: Praktikum Exception Handling (P10) ===
+NIM 2511532001 | Az Zahrand Solichul Tajussalathin | Java 24
+
+-- L0 - Persiapan
+  [GAGAL] L0.1 Program berjalan di Java 25 atau lebih baru
+          -> Java yang dipakai versi 24; pilih JDK 25 (Java: Configure Java Runtime)
+  [LULUS] L0.2 NIM dan nama di StudentInfo sudah diisi
+
+-- L1 - Membaca crash dan menangani input
+  [LULUS] L1.1 ShopApp tidak crash saat nomor produk berupa huruf
+  [LULUS] L1.2 ShopApp menolak nomor produk di luar katalog
+  [LULUS] L1.3 Jumlah bukan angka atau <= 0 ditolak
+
+-- L3 - Custom exception, Inventory, checkout
+  [LULUS] L3.1 ShopException adalah checked exception dengan 2 konstruktor
+  [LULUS] L3.2 Hierarki exception toko + serialVersionUID
+  [LULUS] L3.3 Exception membawa data (sku, requested, available, shortfall)
+  [LULUS] L3.4 Inventory.reserve: stok kurang -> OutOfStockException, stok tetap
+  [LULUS] L3.5 Inventory.release mengembalikan stok
+  [LULUS] L3.6 PaymentMethod.pay(long) bertipe void dan throws PaymentFailedException
+  [LULUS] L3.7 EWalletPayment: saldo kurang -> InsufficientBalanceException
+  [LULUS] L3.8 CreditCardPayment: limit kurang -> InsufficientBalanceException
+  [LULUS] L3.9 CheckoutService(Inventory); checkout(...) mengembalikan long + throws
+  [LULUS] L3.10 Checkout berhasil: jumlah dibayar benar, stok berkurang
+  [LULUS] L3.11 Checkout gagal: stok dikembalikan, exception asli dilempar ulang
+  [LULUS] L3.12 Checkout keranjang kosong -> IllegalStateException
+  [LULUS] L3.13 ShopApp.buy(...): urutan catch dan pesan [OK]/[SALDO]/[BAYAR]/[STOK]
+
+-- L4 - try-with-resources dan katalog CSV
+  [LULUS] L4.1 CatalogLoadException turunan ShopException dan menyimpan cause
+  [LULUS] L4.2 katalog.csv: 4 produk terbaca, 3 baris rusak dilewati
+  [LULUS] L4.3 File tidak ada -> CatalogLoadException dengan cause IOException
+  [LULUS] L4.4 CatalogReader membuka file dengan try-with-resources
+
+-- L5 - Evaluasi kode FragileShop
+  [LULUS] L5.1 FragileShop.payOrder tidak lagi menelan kegagalan bayar
+  [LULUS] L5.2 FragileShop.readCatalogHeader menyertakan penyebab asli
+
+=== HASIL: 23 / 24 pemeriksaan lulus (nilai SelfCheck 48 / 50) ===

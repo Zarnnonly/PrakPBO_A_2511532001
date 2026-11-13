@@ -1,0 +1,21 @@
+== Bagian A ==
+A1 mulai
+A2 jumlah = 12
+A4 finally
+A5 lanjut
+A1 mulai
+A3 bukan angka
+A4 finally
+A5 lanjut
+== Bagian B ==
+B1 bulan = 3
+B2 cicilan = 100000
+B4 finally
+B5 hasil = 100000
+B1 bulan = 0
+B4 finally
+B7 main menangkap: / by zero
+== Bagian C ==
+C1 cek stok
+C2 finally
+C3 sisa = 4

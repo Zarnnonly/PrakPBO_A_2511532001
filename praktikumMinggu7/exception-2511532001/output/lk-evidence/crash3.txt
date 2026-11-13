@@ -1,0 +1,4 @@
+Skenario 3
+Exception in thread "main" java.lang.NullPointerException: Cannot invoke "shop.model.Address.getCity()" because the return value of "shop.demo.CrashDemo$Customer.getAddress()" is null
+	at shop.demo.CrashDemo.shippingCity(CrashDemo.java:32)
+	at shop.demo.CrashDemo.main(CrashDemo.java:44)

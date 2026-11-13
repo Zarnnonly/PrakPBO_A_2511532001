@@ -1,0 +1,19 @@
+Tugas oleh Az Zahrand Solichul Tajussalathin (2511532001)
+
+== T1: Total dengan biaya admin (Ekspres) ==
+E-Wallet DompetKu : Rp268000 (admin Rp0)
+Transfer Bank Nagari : Rp271000 (admin Rp3000)
+Kartu Kredit (Siti Rahma) : Rp273360 (admin Rp5360)
+
+Kebijakan kartu kredit : Refund maksimal 7 hari; Cicilan maksimal 12 bulan
+Kebijakan e-wallet     : Refund maksimal 7 hari
+
+== T2: Notifikasi status pesanan ==
+[EMAIL to siti@example.com] Pesanan ORD-0001 sudah dikirim dengan kurir Ekspres. Nomor resi akan muncul di aplikasi dalam 1x24 jam. Terima kasih telah berbelanja produk UMKM Sumatera Barat di toko kami! Silakan periksa alamat tujuan dan hubungi layanan pelanggan jika membutuhkan bantuan.
+[SMS to 081234567890] Pesanan ORD-0001 sudah dikirim dengan kurir Ekspres. Nomor resi akan muncul di aplikasi dalam 1x24...
+[WA to 081234567890] [Toko UMKM] Pesanan ORD-0001 sudah dikirim dengan kurir Ekspres. Nomor resi akan muncul di aplikasi dalam 1x24 jam. Terima kasih telah berbelanja produk UMKM Sumatera Barat di toko kami! Silakan periksa alamat tujuan dan hubungi layanan pelanggan jika membutuhkan bantuan.
+[LOG] Siti Rahma: Pesanan ORD-0001 sudah dikirim dengan kurir Ekspres. Nomor resi akan muncul di aplikasi dalam 1x24 jam. Terima kasih telah berbelanja produk UMKM Sumatera Barat di toko kami! Silakan periksa alamat tujuan dan hubungi layanan pelanggan jika membutuhkan bantuan.
+Terkirim ke Siti Rahma lewat 4 kanal
+[WA to +6281298765432] [Toko UMKM] Pesanan ORD-0001 sudah dikirim dengan kurir Ekspres. Nomor resi akan muncul di aplikasi dalam 1x24 jam. Terima kasih telah berbelanja produk UMKM Sumatera Barat di toko kami! Silakan periksa alamat tujuan dan hubungi layanan pelanggan jika membutuhkan bantuan.
+[LOG] Budi: Pesanan ORD-0001 sudah dikirim dengan kurir Ekspres. Nomor resi akan muncul di aplikasi dalam 1x24 jam. Terima kasih telah berbelanja produk UMKM Sumatera Barat di toko kami! Silakan periksa alamat tujuan dan hubungi layanan pelanggan jika membutuhkan bantuan.
+Terkirim ke Budi lewat 2 kanal

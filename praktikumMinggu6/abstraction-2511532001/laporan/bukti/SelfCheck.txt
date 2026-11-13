@@ -1,0 +1,37 @@
+=== SELF CHECK: Praktikum Abstraction ===
+
+
+-- L1 - Abstract class & abstract method
+  [LULUS] L1.1 Product adalah abstract class
+  [LULUS] L1.2 Product punya abstract method category()
+  [LULUS] L1.3 PhysicalProduct & DigitalProduct adalah subclass konkret Product
+  [LULUS] L1.4 Konstruktor menolak harga negatif (IllegalArgumentException)
+  [LULUS] L1.5 getInfo() PhysicalProduct sesuai format
+  [LULUS] L1.6 ShippingService abstract dengan abstract method ratePerKg()
+  [LULUS] L1.7 calculateCost(): Reguler 700g=10000, 1001g=20000, 0g=0; Ekspres 700g=18000
+
+-- L2 - Interface & program to an interface
+  [LULUS] L2.1 Shippable interface; PhysicalProduct implements, DigitalProduct tidak
+  [LULUS] L2.2 PaymentMethod interface dengan getName() dan pay(long)
+  [LULUS] L2.3 EWalletPayment: bayar sukses mengurangi saldo, saldo kurang ditolak
+  [LULUS] L2.4 CheckoutService.checkout(...) menerima PaymentMethod & ShippingService (bukan class konkret)
+  [LULUS] L2.5 Total keranjang contoh: Reguler=260000, Ekspres=268000
+
+-- L3 - Default, static, private method; interface inheritance
+  [LULUS] L3.1 Discountable: applyDiscount default, percentOf static, ada private method
+  [LULUS] L3.2 DigitalProduct implements Discountable; harga akhir 50000 -> 45000
+  [LULUS] L3.3 RefundablePayment & InstallmentPayment adalah interface turunan PaymentMethod
+  [LULUS] L3.4 CreditCardPayment implements RefundablePayment DAN InstallmentPayment
+  [LULUS] L3.5 monthlyInstallment(100000, 3)=33334 dan 13 bulan ditolak
+  [LULUS] L3.6 CheckoutService.refund(...) hanya menerima RefundablePayment
+
+-- L4 - final method & final class
+  [LULUS] L4.1 ShippingService.calculateCost(int) adalah final method
+  [LULUS] L4.2 Address final class, semua field private final, tanpa setter
+
+-- L5 - Static nested, inner, dan anonymous class
+  [LULUS] L5.1 Order.Line static nested; Order.Receipt inner (non-static)
+  [LULUS] L5.2 Receipt.toText() memuat id pesanan, total barang, dan kota tujuan
+  [LULUS] L5.3 ShopApp memakai anonymous class yang mengimplementasikan PaymentMethod
+
+=== HASIL: 23 / 23 pemeriksaan lulus ===

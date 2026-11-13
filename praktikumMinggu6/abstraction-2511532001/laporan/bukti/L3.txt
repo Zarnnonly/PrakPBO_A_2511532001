@@ -1,0 +1,5 @@
+C:\Users\lenovo\AppData\Local\Temp\abstraction-evidence-65ffat6n\Probe.java:1: error: incompatible types: BankTransferPayment cannot be converted to RefundablePayment
+class Probe { void test() { new shop.service.CheckoutService().refund(new shop.payment.BankTransferPayment("Bank Nagari"), 1000); } }
+                                                                      ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error

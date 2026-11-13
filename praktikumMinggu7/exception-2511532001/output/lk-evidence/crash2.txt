@@ -1,0 +1,7 @@
+Skenario 2
+Exception in thread "main" java.lang.NumberFormatException: For input string: "dua"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:564)
+	at java.base/java.lang.Integer.parseInt(Integer.java:661)
+	at shop.demo.CrashDemo.readQuantity(CrashDemo.java:28)
+	at shop.demo.CrashDemo.main(CrashDemo.java:43)

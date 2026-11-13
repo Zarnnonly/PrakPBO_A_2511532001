@@ -1,0 +1,23 @@
+=== TUGAS CHECK: Praktikum Abstraction ===
+NIM: 2511532001 | Az Zahrand Solichul Tajussalathin
+
+-- Parameter NIM
+  [LULUS] P.1 Konstanta di StudentInfo sesuai NIM (2%, Rp3000, 101 karakter)
+
+-- T1 - Evolusi API & diamond
+  [LULUS] T1.1 PaymentMethod.adminFee(long) adalah default method; e-wallet = 0
+  [LULUS] T1.2 Biaya admin kartu kredit & transfer sesuai parameter NIM
+  [LULUS] T1.3 grandTotal(...) = total + biaya admin (kartu kredit, keranjang contoh, Ekspres)
+  [LULUS] T1.4 Diamond policy(): kartu kredit menggabungkan kedua kebijakan
+
+-- T2 - Sistem notifikasi
+  [LULUS] T2.1 NotificationChannel interface; AbstractChannel abstract dengan send(...) final
+  [LULUS] T2.2 EmailChannel, SmsChannel, WhatsAppChannel adalah subclass AbstractChannel
+[SMS to 081234567890] xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...
+  [LULUS] T2.3 SmsChannel memotong pesan panjang tepat 101 karakter berakhiran "..."
+[EMAIL to uji@example.com] Halo
+  [LULUS] T2.4 EmailChannel menolak kontak tanpa email yang valid
+[WA to +6281298765432] [Toko UMKM] Pesanan dikirim
+  [LULUS] T2.5 NotificationService.broadcast(...) mengembalikan jumlah kanal yang berhasil
+
+=== HASIL: 10 / 10 pemeriksaan lulus ===

@@ -1,0 +1,117 @@
+{
+  "reference_sha256": "561d21acc321acfd9408c7ee289dd2fcbb697a5667603ca958387189b6796855",
+  "parts": {
+    "[Content_Types].xml": {
+      "bytes": 3173,
+      "sha256": "477d02005214360fdf72c5768c3173596d0ddcfc201fcd98a6ca18274c7854e5"
+    },
+    "_rels/.rels": {
+      "bytes": 590,
+      "sha256": "e19238d7a71fa7a2490776252686f70e2de6238c87cd509b5e3a3cc07c2ea4df"
+    },
+    "word/document.xml": {
+      "bytes": 234556,
+      "sha256": "24fde869e1beef26ab6b1ba1ced0631c6eed021dc62a66a58f0f0f73f6668141"
+    },
+    "word/_rels/document.xml.rels": {
+      "bytes": 2780,
+      "sha256": "b1ab615e726aac8252f094d6965bc1d04881f46cfe986d46ff1e71338d8a348f"
+    },
+    "word/footnotes.xml": {
+      "bytes": 3021,
+      "sha256": "22430ed1737fc3908155490c7b67489083db255e637c66c7f1f7510d7ac19d4f"
+    },
+    "word/endnotes.xml": {
+      "bytes": 3015,
+      "sha256": "71e5c20fdfaf82fb1ce6a9ebbb8aae4aab1bc2c1f0dd2cda97963f013c137c0a"
+    },
+    "word/header1.xml": {
+      "bytes": 2754,
+      "sha256": "3220455c3b0a008e7b61dffb6c6e3bc1a52a80efd0a597903a7e9f033ff19d8e"
+    },
+    "word/footer1.xml": {
+      "bytes": 2754,
+      "sha256": "b53f0bd7ec3b90396e8a7d4755951ad15f03c5fd92cc61290ec028e75d95b177"
+    },
+    "word/header2.xml": {
+      "bytes": 2753,
+      "sha256": "eabf10aad20fc5ec1629e2cc93863a0f8f02cdd7323dc065c3ba0a870075e8ad"
+    },
+    "word/footer2.xml": {
+      "bytes": 3024,
+      "sha256": "c74ac14f0b0e02dcf045ac011abe79d45a9fb716af2a47f23159cb44efb3075f"
+    },
+    "word/header3.xml": {
+      "bytes": 2591,
+      "sha256": "c05074b1f093c4d0f9d8873600828c4adfec05699cd00e465edd7ce29802164e"
+    },
+    "word/footer3.xml": {
+      "bytes": 3021,
+      "sha256": "72822e22bd8a3cabe442d4e24097d546d4f84b60441e37572f16085c6d10699f"
+    },
+    "word/header4.xml": {
+      "bytes": 3291,
+      "sha256": "bd25922197279f8b3d896d97f6052a3fbe0aa989c237995084503e60a90e3218"
+    },
+    "word/footer4.xml": {
+      "bytes": 2754,
+      "sha256": "cbf0b2c45e37b231652438b84dca1d113e11787888965f755b7ad70c47af0c6e"
+    },
+    "word/header5.xml": {
+      "bytes": 2631,
+      "sha256": "831508767df7e83515dd4e9a63a1c5ddbf7eed8df9b1aa6aae92351deec5ec40"
+    },
+    "word/footer5.xml": {
+      "bytes": 3024,
+      "sha256": "8458738f4397c40c2f970c87aa93607fc5674aeec135fad2de0af88af2495ea3"
+    },
+    "word/media/image1.jpeg": {
+      "bytes": 141824,
+      "sha256": "6d3084a9c4bd48b6c3771713451db1852655faa067d1e415075fd82c5e11409c"
+    },
+    "word/theme/theme1.xml": {
+      "bytes": 8399,
+      "sha256": "d37627ed1a5bda40fa339cc2115c70db5e019f1b128736b92b267180531434c6"
+    },
+    "word/settings.xml": {
+      "bytes": 14877,
+      "sha256": "23357a36da3db4153b0b01f1c2c44f72d7deb48aaf454cfed0cbe583bbd877a4"
+    },
+    "customXml/item1.xml": {
+      "bytes": 289,
+      "sha256": "b30b8fd758aa47aada70ee7d8d8287349d6a21eb03c79bcb2e8930a1789022cc"
+    },
+    "customXml/itemProps1.xml": {
+      "bytes": 341,
+      "sha256": "51b1ccab771553d54a18e75454148397e8c317aad2bece9f8efa7cf1fc1692d7"
+    },
+    "word/numbering.xml": {
+      "bytes": 115194,
+      "sha256": "4de6e1862926599535627b422291b27c74b78faa3832a304e4ad6707e3c08f2f"
+    },
+    "word/styles.xml": {
+      "bytes": 46429,
+      "sha256": "5d6a8f833153cf48e1bbfc52b41fb06864b8719e0e07ae6c6b2ec63648461af7"
+    },
+    "word/webSettings.xml": {
+      "bytes": 270885,
+      "sha256": "1cbc3cfc03b93b2829aace07ff467f5e125d6881f00c3482e66b8afd9da007ac"
+    },
+    "word/fontTable.xml": {
+      "bytes": 2723,
+      "sha256": "1251317ece164b722f7ef49bde5feaf9dd2c48e8c54c5af8c0c6856412daf2fe"
+    },
+    "docProps/core.xml": {
+      "bytes": 821,
+      "sha256": "af5f8703abf1bfe8b0c59060678a58ee1e2db0c619af43f2f2c842a4c40107c0"
+    },
+    "docProps/app.xml": {
+      "bytes": 995,
+      "sha256": "2f9361d349c693590425c27f2a9d204b8c8ae7551ebecaf0d4f2d0e49e3b9acd"
+    },
+    "customXml/_rels/item1.xml.rels": {
+      "bytes": 296,
+      "sha256": "80482f86e196171d66001e0e74d1900408a3aaf2463e54005d251b5f2db9a0b0"
+    }
+  }
+}

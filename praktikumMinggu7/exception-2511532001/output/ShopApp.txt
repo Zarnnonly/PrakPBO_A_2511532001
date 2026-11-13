@@ -1,0 +1,18 @@
+Nov 12, 2026 3:10:02 PM shop.io.CatalogReader load
+WARNING: Baris 3 dilewati: For input string: "95rb"
+Nov 12, 2026 3:10:02 PM shop.io.CatalogReader load
+WARNING: Baris 5 dilewati: expected 4 fields, found 2
+Nov 12, 2026 3:10:02 PM shop.io.CatalogReader load
+WARNING: Baris 6 dilewati: Price must not be negative
+== Toko Online UMKM ==
+(4 produk, 3 baris katalog dilewati)
+1. [Fisik] Kopi Arabika Gayo 250g - Rp85000 | stok 3
+2. [Fisik] Rendang Kemasan 250g - Rp120000 | stok 1
+3. [Fisik] Teh Kayu Aro 100g - Rp35000 | stok 5
+4. [Fisik] Keripik Balado 200g - Rp30000 | stok 5
+Nomor produk (0 = selesai): Jumlah:   + 1 x Kopi Arabika Gayo 250g
+Nomor produk (0 = selesai): Jumlah:   + 2 x Keripik Balado 200g
+Nomor produk (0 = selesai): 
+Keranjang: 3 barang, total Reguler Rp155000
+[OK] E-Wallet DompetKu membayar Rp155000
+Sisa saldo: Rp45000

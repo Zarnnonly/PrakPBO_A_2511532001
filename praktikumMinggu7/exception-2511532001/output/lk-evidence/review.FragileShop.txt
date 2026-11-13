@@ -1,0 +1,5 @@
+1) Pembayaran gagal: Saldo tidak cukup: perlu Rp85000, tersedia Rp50000
+2) Kopi tersedia? true
+3) Gagal: jumlah harus berupa angka.
+   Gagal: stok KOPI-001 tidak cukup, tersedia 1.
+4) Katalog gagal dibaca: katalog-lama.csv | penyebab: java.nio.file.NoSuchFileException: katalog-lama.csv

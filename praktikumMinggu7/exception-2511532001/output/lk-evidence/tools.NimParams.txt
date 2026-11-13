@@ -1,0 +1,5 @@
+Parameter praktikum P10 untuk NIM 2511532001
+  Saldo awal e-wallet DompetKu : Rp200000
+  Stok awal KOPI-001           : 3
+  Stok awal RDG-002            : 1
+  Stok awal produk lain        : 5
